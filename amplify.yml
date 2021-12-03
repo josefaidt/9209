@@ -4,7 +4,7 @@ backend:
     preBuild:
       commands:
         - nvm install
-        - yum install jq -y
+        - if ! [ -x "$(command -v jq)" ]; then yum install jq -y; fi;
         - content="$(jq '.pluginDirectories += ["packaged-node-modules"]' $AMPLIFY_PLUGINS_FILE)" && \
           echo "${content}" > $AMPLIFY_PLUGINS_FILE
         - yarn global add @aws-amplify/cli
