@@ -3,9 +3,8 @@ backend:
   phases:
     preBuild:
       commands:
-        - which yarn
         - nvm install
-        - which yarn
+        - npm i -g yarn
         - yarn global add @aws-amplify/cli
     build:
       commands:
