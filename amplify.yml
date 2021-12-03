@@ -1,0 +1,12 @@
+version: 1
+backend:
+  phases:
+    preBuild:
+      commands:
+        - which yarn
+        - nvm install
+        - which yarn
+        - yarn global add @aws-amplify/cli
+    build:
+      commands:
+        - amplifyPush --simple
