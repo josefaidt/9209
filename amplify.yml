@@ -5,6 +5,7 @@ backend:
       commands:
         - nvm install
         - if ! [ -x "$(command -v jq)" ]; then yum install jq -y; fi;
+        - AMPLIFY_PLUGINS_FILE=~/.amplify/plugins.json
         - content="$(jq '.pluginDirectories += ["packaged-node-modules"]' $AMPLIFY_PLUGINS_FILE)" && \
           echo "${content}" > $AMPLIFY_PLUGINS_FILE
         - yarn global add @aws-amplify/cli
