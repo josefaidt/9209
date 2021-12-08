@@ -9,3 +9,13 @@ backend:
     build:
       commands:
         - amplifyPush --simple
+frontend:
+  phases:
+    build:
+      commands: []
+  artifacts:
+    files:
+      - '**/*'
+    baseDirectory: /public
+  cache:
+    paths: []
