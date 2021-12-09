@@ -3,10 +3,11 @@ backend:
   phases:
     preBuild:
       commands:
-        - nvm install 12
-        # - ./patch
+        - nvm install
+        # - ./scripts/patch
+        - node scripts/patch.js
         - yarn global add @aws-amplify/cli
-        - amplify plugin scan
+        # - amplify plugin scan
     build:
       commands:
         - amplifyPush --simple
