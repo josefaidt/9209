@@ -6,6 +6,7 @@ backend:
         - nvm install 12
         # - ./patch
         - yarn global add @aws-amplify/cli
+        - amplify plugin scan
     build:
       commands:
         - amplifyPush --simple
